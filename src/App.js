@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react'
 import './App.css';
+import EmployeeCard from './components/EmployeeCard'
 
 function App() {
+  const [employees, setEmployees] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:3000/employees')
+      .then(response => response.json())
+      .then(data => {
+        setEmployees(data)
+      })
+      .catch(error => console.log(error));
+  }, []);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1>Hello world!</h1>
+      <EmployeeCard employees={employees} />
     </div>
-  );
+  )
 }
 
 export default App;
