@@ -1,6 +1,7 @@
 import React from 'react'
 
 const EmployeeCard = ({ employees }) => {
+
   return (
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -25,7 +26,7 @@ const EmployeeCard = ({ employees }) => {
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    Status
+                    Phone
                   </th>
                   <th
                     scope="col"
@@ -44,7 +45,7 @@ const EmployeeCard = ({ employees }) => {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
                         <div className="flex-shrink-0 h-10 w-10">
-                          <img className="h-10 w-10 rounded-full" src={employee.image} alt="" />
+                          <img className="object-cover h-10 w-10 rounded-full" src={employee.image} alt="" />
                         </div>
                         <div className="ml-4">
                           <div className="text-sm font-medium text-gray-900">{employee.first_name + " " + employee.last_name}</div>
@@ -57,8 +58,8 @@ const EmployeeCard = ({ employees }) => {
                       {/* <div className="text-sm text-gray-500">{employee.email}</div> */}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                        {employee.training.toString()}
+                      <span className="text-sm font-medium text-gray-900">
+                        {employee.phone}
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{employee.hire_date}</td>
