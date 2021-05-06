@@ -49,7 +49,7 @@ const EmployeeCard = ({ employees }) => {
                         </div>
                         <div className="ml-4">
                           <div className="text-sm font-medium text-gray-900">{employee.first_name + " " + employee.last_name}</div>
-                          <div className="text-sm text-gray-500">{employee.email}</div>
+                          <a className="text-sm text-gray-500" href={`mailto:${employee.email}`}>{employee.email}</a>
                         </div>
                       </div>
                     </td>
