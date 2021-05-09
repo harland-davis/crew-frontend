@@ -7,13 +7,12 @@ import Nav from './Nav'
 function Employees() {
   
   const [employees, setEmployees] = useState([])
-  const [modalVisibility, setModalVisibility] = useState(false)
+  // const [modalVisibility, setModalVisibility] = useState(false);
 
-  const showEmployee = (employee) => {
-    setModalVisibility(true)
-    console.log(employee, modalVisibility)
-  }
-
+  // const showEmployee = (employee) => {
+  //   setModalVisibility(true)
+  //   console.log(employee, modalVisibility)
+  // }
 
   useEffect(() => {
     fetch('http://localhost:3000/employees')
@@ -30,7 +29,7 @@ function Employees() {
       <Nav />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AddEmployee />
-        <EmployeeCard showEmployee={showEmployee} employees={employees} />
+        <EmployeeCard employees={employees} />
       </div>
     </div>
   )

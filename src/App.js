@@ -4,6 +4,7 @@ import Employees from './components/Employees';
 import Documents from './components/Documents'
 import Login from './components/Login'
 import Register from './components/Register'
+import EmployeeDetail from './components/EmployeeDetail'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
@@ -70,8 +71,8 @@ class App extends Component {
             <Route exact path="/" render={() => <Register register={this.register} />} />
             <Route exact path="/employees" component={Employees} />
             <Route path="/documents" component={Documents} />
-            <Route path="/my Profile" />
-          </div>4
+            <Route path="/employee/:id" component={EmployeeDetail} />
+          </div>
         </Switch>
       </Router>
     )

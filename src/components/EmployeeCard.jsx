@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const EmployeeCard = ({ employees, showEmployee }) => {
-console.log(showEmployee)
+  // console.log(showEmployee)
 
   return (
     <div className="flex flex-col">
@@ -68,7 +69,8 @@ console.log(showEmployee)
                       {/* <a href="#" className="text-yellow-600 hover:text-yellow-700">
                         View
                       </a> */}
-                      <button className="text-yellow-600"onClick={() => showEmployee(employee)}>View</button>
+                      {/* <button className="text-yellow-600"onClick={() => showEmployee(employee)}>View</button> */}
+                      <Link to={`/employee/${employee.id}`} className="text-yellow-600" >View {employee.first_name}</Link>
                     </td>
                   </tr>
                 ))}
