@@ -1,6 +1,7 @@
 import React from 'react'
 
-const EmployeeCard = ({ employees }) => {
+const EmployeeCard = ({ employees, showEmployee }) => {
+console.log(showEmployee)
 
   return (
     <div className="flex flex-col">
@@ -41,7 +42,7 @@ const EmployeeCard = ({ employees }) => {
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {employees.map((employee) => (
-                  <tr key={employee.email}>
+                  <tr key={employee.id}>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
                         <div className="flex-shrink-0 h-10 w-10">
@@ -64,9 +65,10 @@ const EmployeeCard = ({ employees }) => {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{employee.hire_date}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <a href="#" className="text-yellow-600 hover:text-yellow-700">
+                      {/* <a href="#" className="text-yellow-600 hover:text-yellow-700">
                         View
-                      </a>
+                      </a> */}
+                      <button className="text-yellow-600"onClick={() => showEmployee(employee)}>View</button>
                     </td>
                   </tr>
                 ))}
