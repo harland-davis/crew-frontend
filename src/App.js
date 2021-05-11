@@ -7,6 +7,7 @@ import Register from './components/Register'
 import EmployeeDetail from './components/EmployeeDetail'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import CreateEmployee from './components/CreateEmployee';
 
 class App extends Component {
   state = {
@@ -60,7 +61,31 @@ class App extends Component {
       })
   }
 
-
+  createNewCrewMember = (employee) => {
+    fetch("http://localhost:3000/employees", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+          first_name: employee.firstName,
+          last_name: employee.lastName,
+          email: employee.email,
+          password: employee.password,
+          title: employee.title,
+          street: employee.street,
+          city: employee.city,
+          state: employee.state,
+          zip: employee.zip,
+          image: employee.image,
+          phone: employee.phone,
+          title: employee.title
+      })
+    })
+      .then(response => response.json())
+      .then(employee => this.setState({ employee }))
+  }
 
   render() {
     return (
@@ -72,6 +97,7 @@ class App extends Component {
             <Route exact path="/employees" component={Employees} />
             <Route path="/documents" component={Documents} />
             <Route path="/employee/:id" component={EmployeeDetail} />
+            <Route path="/create" render={() => <CreateEmployee createNewCrewMember={this.createNewCrewMember} />} />
           </div>
         </Switch>
       </Router>

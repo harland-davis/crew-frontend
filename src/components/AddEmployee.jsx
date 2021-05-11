@@ -1,6 +1,14 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom';
+
+
 
 export default function AddEmployee() {
+  const history = useHistory()
+  const handleNavigation = () => {
+    return history.push('/create')
+  }
+
   return (
     <div className="pt-12 pb-3 md:flex md:items-center md:justify-between">
       <div className="flex-1 min-w-0">
@@ -10,6 +18,7 @@ export default function AddEmployee() {
         <button
           type="button"
           className="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+          onClick={handleNavigation}
         >
           Add New Crew Member
         </button>

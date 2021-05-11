@@ -49,7 +49,7 @@ export default class Register extends Component {
               <div className="mt-6">
                 <form onSubmit={this.handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="first-name" className="text-center block text-sm font-medium text-gray-700">
+                    <label htmlFor="firstName" className="text-center block text-sm font-medium text-gray-700">
                       First Name
                   </label>
                     <div className="mt-1">

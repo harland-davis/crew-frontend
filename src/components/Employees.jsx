@@ -1,7 +1,7 @@
 // import { findAllByTestId } from '@testing-library/dom'
 import React, { useState, useEffect } from 'react'
 import AddEmployee from './AddEmployee'
-import EmployeeCard from './EmployeeCard'
+import EmployeeCard from './EmployeesCard'
 import Nav from './Nav'
 
 function Employees() {
