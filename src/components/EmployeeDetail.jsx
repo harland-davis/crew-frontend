@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Nav from './Nav'
 import { PaperClipIcon } from '@heroicons/react/solid'
+import W2 from "../images/w2.png"
+import foodHandlers from "../images/foodHandlers.png"
 
 export default function EmployeeDetail({ match }) {
   useEffect(() => {
@@ -152,9 +154,9 @@ export default function EmployeeDetail({ match }) {
                     <li className="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
                       <div className="w-0 flex-1 flex items-center">
                         <PaperClipIcon className="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" />
-                        <span className="ml-2 flex-1 w-0 truncate">food_handlers.pdf</span>
+                        <a href={foodHandlers}className="flex-grow underline pl-2" download>Food Handlers</a>
                       </div>
-                      <div className="ml-4 flex-shrink-0 flex space-x-4">
+                      {/* <div className="ml-4 flex-shrink-0 flex space-x-4">
                         <button
                           type="button"
                           className="bg-white rounded-md font-medium text-yellow-600 hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
@@ -170,14 +172,14 @@ export default function EmployeeDetail({ match }) {
                         >
                           Remove
                     </button>
-                      </div>
+                      </div> */}
                     </li>
                     <li className="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
                       <div className="w-0 flex-1 flex items-center">
                         <PaperClipIcon className="flex-shrink-0 h-5 w-5 text-gray-400" aria-hidden="true" />
-                        <span className="ml-2 flex-1 w-0 truncate">w2.pdf</span>
+                        <a href={W2}className="flex-grow underline pl-2" download>W2</a>
                       </div>
-                      <div className="ml-4 flex-shrink-0 flex space-x-4">
+                      {/* <div className="ml-4 flex-shrink-0 flex space-x-4">
                         <button
                           type="button"
                           className="bg-white rounded-md font-medium text-yellow-600 hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
@@ -193,7 +195,7 @@ export default function EmployeeDetail({ match }) {
                         >
                           Remove
                     </button>
-                      </div>
+                      </div> */}
                     </li>
                   </ul>
                 </dd>
