@@ -1,7 +1,8 @@
-import { Component } from 'react'
+import React from 'react'
 import Nav from './Nav'
+import { withRouter } from 'react-router-dom'
 
-export default class CreateEmployee extends Component {
+class CreateEmployee extends React.Component {
 
   state = {
     firstName: "",
@@ -14,8 +15,10 @@ export default class CreateEmployee extends Component {
     city: "",
     zip: "",
     state: "",
-    phone:""
+    phone: "",
+    hireDate: ""
   }
+
 
   handleChange = (event) => {
     this.setState({
@@ -26,7 +29,9 @@ export default class CreateEmployee extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.createNewCrewMember(this.state)
+    this.props.history.push('./employees')
   }
+
 
   render() {
 
@@ -34,7 +39,7 @@ export default class CreateEmployee extends Component {
       <div>
         <Nav />
         <div className="py-9">
-          <div className="shadow-xl py-6 bg-gray-100 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="shadow-md py-6 bg-gray-100 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mt-10 sm:mt-0">
               <div className="md:grid md:grid-cols-3 md:gap-6">
                 <div className="md:col-span-1">
@@ -44,7 +49,7 @@ export default class CreateEmployee extends Component {
                   </div>
                 </div>
                 <div className="mt-5 md:mt-0 md:col-span-2">
-                  <form onSubmit={this.handleSubmit}>
+                  <form onSubmit={this.handleSubmit.bind(this)}>
                     <div className="shadow overflow-hidden sm:rounded-md">
                       <div className="px-4 py-5 bg-white sm:p-6">
                         <div className="grid grid-cols-6 gap-6">
@@ -80,7 +85,7 @@ export default class CreateEmployee extends Component {
                               Password
                       </label>
                             <input
-                              type="text"
+                              type="password"
                               name="password"
                               value={this.state.password}
                               onChange={this.handleChange}
@@ -221,3 +226,5 @@ export default class CreateEmployee extends Component {
     )
   }
 }
+
+export default withRouter(CreateEmployee);

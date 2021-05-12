@@ -80,7 +80,7 @@ class App extends Component {
           zip: employee.zip,
           image: employee.image,
           phone: employee.phone,
-          title: employee.title
+          hire_date: employee.hireDate
       })
     })
       .then(response => response.json())

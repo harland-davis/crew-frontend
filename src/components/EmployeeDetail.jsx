@@ -24,7 +24,7 @@ export default function EmployeeDetail({ match }) {
     <div>
       <Nav />
       <div className="py-9">
-        <div className="shadow-xl py-3 bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="shadow-md py-3 bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-5">
             <h3 className="text-yellow-600 text-3xl leading-6 font-normal text-gray-900">{employeeDetail.first_name + " " + employeeDetail.last_name}</h3>
             <p className="mt-1 py-2 max-w-2xl text-sm text-gray-500">Crew member details</p>

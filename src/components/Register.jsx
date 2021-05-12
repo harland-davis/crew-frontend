@@ -1,7 +1,8 @@
-import { Component } from 'react'
+import React from 'react'
 import Astronauts from "../images/astronauts.jpg"
+import { withRouter } from 'react-router-dom'
 
-export default class Register extends Component {
+class Register extends React.Component {
 
   state = {
     firstName: "",
@@ -19,6 +20,7 @@ export default class Register extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.register(this.state)
+    this.props.history.push('./employees')
   }
 
   render() {
@@ -47,7 +49,7 @@ export default class Register extends Component {
                 </div>
               </div>
               <div className="mt-6">
-                <form onSubmit={this.handleSubmit} className="space-y-6">
+                <form onSubmit={this.handleSubmit.bind(this)} className="space-y-6">
                   <div>
                     <label htmlFor="firstName" className="text-center block text-sm font-medium text-gray-700">
                       First Name
@@ -147,3 +149,5 @@ export default class Register extends Component {
     )
   }
 }
+
+export default withRouter(Register)
